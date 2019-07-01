@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "317413855235",
+    "firebase_url": "https://bookconda-f0b6d.firebaseio.com",
+    "project_id": "bookconda-f0b6d",
+    "storage_bucket": "bookconda-f0b6d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:317413855235:android:c449a9cd57decba6",
+        "android_client_info": {
+          "package_name": "com.bookconda.book"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "317413855235-6mbv6349u0aha0ruhir7jik7julafhh0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBi4KbkR6ce0uvNXUoDQ85dMJ6T5KKoEBo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "317413855235-6mbv6349u0aha0ruhir7jik7julafhh0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
