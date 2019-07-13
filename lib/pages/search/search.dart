@@ -24,8 +24,8 @@ class _SearchPageState extends State<SearchPage> {
   ScrollController _scrollController;
   String urlFilter = "&res=25&view=detailed&column=def&sort=year&sortmode=DESC";
   List<String> endpintSearch = [
-    "https://libgen.is/",
-    // "http://gen.lib.rus.ec/"
+    // "https://libgen.is/",
+    "http://gen.lib.rus.ec/",
     // "http://libgen.io/",
   ];
 
