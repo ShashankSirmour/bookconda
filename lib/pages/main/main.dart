@@ -16,7 +16,7 @@ class MainPage extends StatefulWidget {
 }
 
 class _MainPageState extends State<MainPage> {
-  String projectCode = '1';
+  String projectCode = '2';
   bool needToUpdate = false;
 
   Color iconcolor = Colors.black54;

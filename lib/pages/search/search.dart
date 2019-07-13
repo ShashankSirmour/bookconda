@@ -103,14 +103,14 @@ class _SearchPageState extends State<SearchPage> {
                 if (index % 3 == 0 && index != 0)
                   return Column(
                     children: <Widget>[
-                      BookPreviewCard(book: books[index],index:index),
+                      BookPreviewCard(book: books[index], index: index),
                       AdmobBanner(
                         adUnitId: getBannerAdUnitId(),
                         adSize: AdmobBannerSize.BANNER,
                       )
                     ],
                   );
-                return BookPreviewCard(book: books[index],index: index);
+                return BookPreviewCard(book: books[index], index: index);
               },
             ),
             fetching == true && lastPage != true ? buildLoading() : Container()
@@ -166,12 +166,6 @@ class _SearchPageState extends State<SearchPage> {
     }
     allBookElement.forEach(
       (bookElement) async {
-        List<dom.Element> data =
-            bookElement.querySelectorAll("tr[valign='top']"); //getting all data
-
-        List<dom.Element> children = data[1].children;
-        dom.Element downloadUrl = children[0].querySelector('a');
-
         String bookDownloadUrl,
             bookImageUrl,
             bookTitle,
@@ -188,14 +182,20 @@ class _SearchPageState extends State<SearchPage> {
             bookSize,
             bookExtention;
 
-        bookDownloadUrl = downloadUrl.attributes['href']
-            .toString(); //book download url  sometimes not work so
+        List<dom.Element> data =
+            bookElement.querySelectorAll("tr[valign='top']"); //getting all data
+
+        List<dom.Element> children = data[1].children;
 
         dom.Element imageUrl = children[0].querySelector('img');
         bookImageUrl = imageUrl.attributes['src'].toString(); // book image url
 
         dom.Element title = children[2].querySelector('a');
+
         bookTitle = title.text.toString(); // book title
+
+        bookDownloadUrl = title.attributes['href']
+            .toString(); //book download url  sometimes not work so
 
         dom.Element author = data[2].querySelector('a');
         bookAuthor = author.text.toString(); //book Author

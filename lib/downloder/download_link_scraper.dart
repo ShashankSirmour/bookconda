@@ -1,6 +1,6 @@
 import 'package:html/parser.dart';
 import 'package:http/http.dart';
-import 'package:html/dom.dart' as dom;
+
 import 'dart:async';
 
 class Scrapper {
@@ -18,8 +18,22 @@ class Scrapper {
 
     var document = parse(response.body);
 
-    dom.Element element = document.querySelector("a");
-    var url = element.attributes['href'];
+    String adUrl = document
+        .querySelector("body > table > tbody >tr >td > a ")
+        .attributes['href']
+        .trim();
+
+    response = await client.get(adUrl);
+
+    if (!(200 <= response.statusCode && response.statusCode <= 299))
+      return null;
+    String endpoint =response.request.url.origin;
+    print("\n\n\n\n\n\n\n");
+    print(endpoint);
+
+    document = parse(response.body);
+
+    var url = endpoint + document.querySelector("a").attributes['href'];
 
     return url;
   }
