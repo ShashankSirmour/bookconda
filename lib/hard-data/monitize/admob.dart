@@ -1,11 +1,14 @@
-final String _appId = "ca-app-pub-7406193184489023~5334838229";
-final String _bannerAdUnitId = "ca-app-pub-7406193184489023/5037780161";
-final String _interstitialAdUnitId = "ca-app-pub-7406193184489023/6367227606";
+final String _appId = "ca-app-pub-7406193184489023~4272157084";
+final String _bannerAdUnitId = "ca-app-pub-7406193184489023/6758719628";
 final String _testBannerId = 'ca-app-pub-3940256099942544/6300978111';
+
+final String _interstitialAdUnitId = "ca-app-pub-7406193184489023/7333380797";
 final String _testInterstitialAdUnitId =
     "ca-app-pub-3940256099942544/1033173712";
-final String _rewardAdUnitId = 'ca-app-pub-7406193184489023/2242744790';
-final String _testRewardAdUnitId = 'ca-app-pub-3940256099942544/8691691433';
+
+final String _readInterstitialAdUnitId = "ca-app-pub-7406193184489023/7936069927";
+final String _readTestInterstitialAdUnitId =
+    "ca-app-pub-3940256099942544/1033173712";
 
 
 String getAppId() {
@@ -17,23 +20,25 @@ String getTestBannerAdUnitId() {
   return _testBannerId;
 }
 
+String getBannerAdUnitId() {
+  return _bannerAdUnitId;
+}
+
 
 String getTestInterstitialAdUnitId() {
   return _testInterstitialAdUnitId;
-}
-
-String getBannerAdUnitId() {
-  return _bannerAdUnitId;
 }
 
 String getInterstitialAdUnitId() {
   return _interstitialAdUnitId;
 }
 
-String getRewardAdUnitId() {
-  return _rewardAdUnitId;
+
+
+String getReadTestInterstitialAdUnitId() {
+  return _readTestInterstitialAdUnitId;
 }
 
-String getTestRewardAdUnitId() {
-  return _testRewardAdUnitId;
+String getReadInterstitialAdUnitId() {
+  return _readInterstitialAdUnitId;
 }

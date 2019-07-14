@@ -15,15 +15,7 @@ class ExploreScreen extends StatefulWidget {
 class _ExploreScreenState extends State<ExploreScreen> {
   List<NewsPaper> newsPapers = [];
   bool onProgress = true;
-  @override
-  void initState() {
-    initiate().then((_) {
-      setState(() {
-        onProgress = false;
-      });
-    });
-    super.initState();
-  }
+ 
 
   @override
   Widget build(BuildContext context) {
@@ -57,7 +49,16 @@ class _ExploreScreenState extends State<ExploreScreen> {
                   ),
                   onProgress
                       ? Center(
-                          child: CircularProgressIndicator(),
+                          child: RaisedButton(
+                            child: Text("Get Today's"),
+                            onPressed: () {
+                              initiate().then((_) {
+                                setState(() {
+                                  onProgress = false;
+                                });
+                              });
+                            },
+                          ),
                         )
                       : NewsList(
                           newsPapers: newsPapers,

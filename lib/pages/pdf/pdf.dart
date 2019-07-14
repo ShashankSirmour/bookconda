@@ -24,32 +24,31 @@ class _PDFPageState extends State<PDFPage> {
   int _currentPage = 1;
   String filePath;
   double totalPage = 2.0;
-  AdmobReward rewardAd;
+  AdmobInterstitial interstitialAd;
 
   @override
   void initState() {
     filePath = join(
         widget.storedBook.downloadPath, widget.storedBook.downloadFileName);
 
-    rewardAd = AdmobReward(
-      adUnitId: getRewardAdUnitId(),
+    interstitialAd = AdmobInterstitial(
+      adUnitId: getReadInterstitialAdUnitId(),
       listener: (AdmobAdEvent event, Map<String, dynamic> args) {
-        if (event == AdmobAdEvent.loaded) rewardAd.show();
-        if (event == AdmobAdEvent.rewarded) {
-          print('User was rewarded!');
-          print('Reward type: ${args['type']}');
-          print('Reward amount: ${args['amount']}');
+        if (event == AdmobAdEvent.loaded) interstitialAd.show();
+        if (event == AdmobAdEvent.closed) {}
+        if (event == AdmobAdEvent.failedToLoad) {
+          print("Error code: ${args['errorCode']}");
         }
       },
     );
 
-    rewardAd.load();
+    interstitialAd.load();
     super.initState();
   }
 
   @override
   void dispose() {
-    rewardAd.dispose();
+    interstitialAd.dispose();
     super.dispose();
   }
 
@@ -139,7 +138,7 @@ class _PDFPageState extends State<PDFPage> {
                     });
                   },
                   min: 1,
-                  max: totalPage == null ? 1 : totalPage-1,
+                  max: totalPage == null ? 1 : totalPage - 1,
                 )),
           )
         ],
